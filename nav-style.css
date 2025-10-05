@@ -5,10 +5,11 @@ body.dark { --bg:#1e1e1e; --ink:#f2ede4; --muted:#cfcfcf; --rule:#333; }
 /* ===== Base ===== */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+/* Base font for all body text */
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: "Playfair Display", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   text-align: center;
   transition: background-color .3s ease, color .3s ease;
@@ -91,21 +92,35 @@ body.dark {
   --accent-ink: #0f1115;
 }
 
-/* Accent underline for the hero title */
+/* Hero title (Doing IT Right) */
 .hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 6vw, 3.5rem);
+  font-weight: 700;
   display: inline-block;
   position: relative;
   padding-bottom: .15em;
+  letter-spacing: 0.02em;
+  color: var(--ink);
 }
+
+/* Gradient underline accent */
 .hero-title::after {
   content: "";
   position: absolute;
-  left: 50%; transform: translateX(-50%);
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -0.05em;
   width: 80%;
   height: .18em;
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent 0, var(--accent) 20%, var(--accent) 80%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0,
+    var(--accent) 20%,
+    var(--accent) 80%,
+    transparent 100%
+  );
   opacity: .6;
 }
 
