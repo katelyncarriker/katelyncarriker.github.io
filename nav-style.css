@@ -34,6 +34,30 @@ nav a {
 }
 nav a:hover { text-decoration: underline; }
 
+.button {
+  display: inline-block;
+  background-color: #4b5069;
+  color: #f2ede4;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background-color: #3c4058;
+}
+
+.linkedin-btn {
+  background-color: #0a66c2;
+}
+
+.linkedin-btn:hover {
+  background-color: #004182;
+}
+
+
 /* Toggle icon */
 #theme-toggle {
   position: absolute; right: 0;
