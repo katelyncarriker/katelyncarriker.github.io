@@ -1,0 +1,58 @@
+/* ===== Theme variables ===== */
+:root { --bg:#f2ede4; --ink:#222; --muted:#444; --rule:#ddd; }
+body.dark { --bg:#1e1e1e; --ink:#f2ede4; --muted:#cfcfcf; --rule:#333; }
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+/* ===== Nav (shared) ===== */
+nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 1rem;
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: center;
+}
+.nav-inner {
+  width: 100%; max-width: 900px; position: relative;
+  display: flex; justify-content: center; align-items: center; gap: 1rem;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 .5rem;
+}
+nav a:hover { text-decoration: underline; }
+
+/* Toggle icon */
+#theme-toggle {
+  position: absolute; right: 0;
+  cursor: pointer; background: none; border: none;
+  font-size: 1.2rem; line-height: 1; padding: .25rem .4rem; color: var(--ink);
+  transition: transform .2s ease;
+}
+#theme-toggle:hover { transform: scale(1.15); }
+
+/* ===== Page layout / common text ===== */
+main { max-width: 750px; margin: 0 auto; padding: 3rem 1rem 4rem; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 .5rem; }
+h2 { font-size: 1.3rem; margin: 2.2rem 0 .6rem; }
+p, li { color: var(--muted); margin: .5rem auto; }
+ul { list-style: none; padding: 0; margin: 0 auto; }
+
+/* Optional helper */
+.updated { color:#777; font-size:.95rem; margin-bottom:2rem; }
+
+/* Footer */
+footer { margin-top: 3rem; color:#888; font-size:.9rem; padding-bottom: 2rem; }
+footer a { color: inherit; text-decoration: underline; }
