@@ -56,3 +56,56 @@ ul { list-style: none; padding: 0; margin: 0 auto; }
 /* Footer */
 footer { margin-top: 3rem; color:#888; font-size:.9rem; padding-bottom: 2rem; }
 footer a { color: inherit; text-decoration: underline; }
+
+/* ===== Spice pack (homepage niceties) ===== */
+:root {
+  --accent: #5f6880;       /* slate, matches your banner */
+  --accent-ink: #ffffff;   /* text on accent areas */
+}
+body.dark {
+  --accent: #9aa3bf;       /* lighter accent for dark */
+  --accent-ink: #0f1115;
+}
+
+/* Accent underline for the hero title */
+.hero-title {
+  display: inline-block;
+  position: relative;
+  padding-bottom: .15em;
+}
+.hero-title::after {
+  content: "";
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: -0.05em;
+  width: 80%;
+  height: .18em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent 0, var(--accent) 20%, var(--accent) 80%, transparent 100%);
+  opacity: .6;
+}
+
+/* Role chips */
+.chips { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; margin: .5rem 0 1.25rem; }
+.chip {
+  font-size: .95em;
+  padding: .35rem .6rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+/* CTA button */
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .6rem .9rem; border-radius: .6rem;
+  background: var(--accent); color: var(--accent-ink);
+  text-decoration: none; font-weight: 700;
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.btn .arrow { transition: transform .15s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* Active nav link */
+nav a.active { text-decoration: underline; text-underline-offset: 4px; }
