@@ -19,3 +19,12 @@
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 })();
+// Highlight active nav link
+(() => {
+  const here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('nav a').forEach(a => {
+    const target = a.getAttribute('href') || '';
+    if ((here === '' && target === 'index.html') || here === target) a.classList.add('active');
+    if (here === '' && target === 'index.html') a.classList.add('active');
+  });
+})();
