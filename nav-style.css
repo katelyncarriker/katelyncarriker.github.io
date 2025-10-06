@@ -101,11 +101,13 @@ nav a.active {
 /* Default section title (About, Now) — uniform across pages */
 h1 {
   font-family: "Playfair Display", serif; /* loaded in your HTML */
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ink);
-  font-size: clamp(2.2rem, 5vw, 2.8rem);
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* smaller, more elegant */
   line-height: 1.2;
-  margin: 1.2rem 0 .8rem;  /* tighter top/bottom rhythm */
+   margin-top: 1.5rem;  /* reduced top padding */
+  margin: 1.25rem 0 .8rem;  /* tighter top/bottom rhythm */
+  text-align: center;
 }
 
 /* Body copy */
