@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Fonts (same as your site setup) -->
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Team — Katelyn Carriker</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="nav-style.css" />
+</head>
+
+<body>
+  <!-- Shared nav -->
+  <nav>
+    <div class="nav-inner">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="now.html">Now</a>
+        <a href="team.html" class="active">Team</a>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>The Team</h1>
+    <p class="intro">
+      My unofficial coworkers and full-time morale officers. Titles are earned,
+      naps are scheduled, and snacks are performance incentives.
+    </p>
+
+    <!-- Team grid -->
+    <section class="team-grid" aria-label="Pets">
+      <!-- Card -->
+      <article class="pet-card">
+        <figure class="pet-media">
+          <img src="images/cat-1.jpg" alt="Willow, a gray tabby lounging like she owns the place" />
+        </figure>
+        <div class="pet-body">
+          <h3>Willow</h3>
+          <span class="pet-role">Chief Mischief Officer</span>
+          <p>
+            Stealth keyboard walker. Specializes in opening new tabs and
+            starting group chats by accident.
+          </p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <figure class="pet-media">
+          <img src="images/cat-2.jpg" alt="Moose, a big orange cat mid-yawn" />
+        </figure>
+        <div class="pet-body">
+          <h3>Moose</h3>
+          <span class="pet-role">Head of Naps</span>
+          <p>
+            Project blocker (literally). Believes every task benefits from a
+            20-minute purr session.
+          </p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <figure class="pet-media">
+          <img src="images/rabbit.jpg" alt="Juniper the rabbit investigating a houseplant" />
+        </figure>
+        <div class="pet-body">
+          <h3>Juniper</h3>
+          <span class="pet-role">Cable Compliance Auditor</span>
+          <p>
+            Ensures all wires meet the “crispy” standard. Suggests frequent
+            replacements for enrichment purposes.
+          </p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <figure class="pet-media">
+          <img src="images/dragon.jpg" alt="Beardie the bearded dragon basking under a heat lamp" />
+        </figure>
+        <div class="pet-body">
+          <h3>Beardie</h3>
+          <span class="pet-role">Sunbeam Operations</span>
+          <p>
+            KPI-driven basking. Monitors warmth levels and approves desk
+            layouts with optimal rays.
+          </p>
+        </div>
+      </article>
+
+      <article class="pet-card">
+        <figure class="pet-media">
+          <img src="images/puppy.jpg" alt="River the puppy offering a paw" />
+        </figure>
+        <div class="pet-body">
+          <h3>River</h3>
+          <span class="pet-role">Junior Joy Engineer</span>
+          <p>
+            Implements tail-wag OKRs. Expert in cross-team kisses and
+            morale-boosting zoomies.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p>© 2025 Katelyn Carriker | Doing IT Right</p>
+    </footer>
+  </main>
+
+  <script src="theme.js"></script>
+</body>
+</html>
