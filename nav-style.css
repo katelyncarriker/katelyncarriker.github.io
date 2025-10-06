@@ -177,6 +177,15 @@ nav a.active {
   padding: 2.5rem 1rem 4rem; 
 }
 
+/* Better paragraph spacing for long-form content */
+.about-page p {
+  margin: 1.2em 0;  /* adds vertical breathing room */
+  line-height: 1.7; /* improves readability */
+  max-width: 70ch;  /* keeps line length comfortable */
+  margin-left: auto;
+  margin-right: auto; /* keeps it centered */
+}
+
 /* Title stays centered; body text gets left-aligned prose */
 .prose { 
   text-align: left; 
