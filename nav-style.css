@@ -153,11 +153,6 @@ body.dark .linkedin-btn:hover {
 .btn .arrow { transition: transform .15s ease; }
 .btn:hover .arrow { transform: translateX(4px); }
 
-/* old filled styles — delete these if present */
-.button, .btn { background: var(--accent); color: var(--accent-ink); }
-.linkedin-btn { background: #0a66c2; }         /* LinkedIn blue */
-.linkedin-btn:hover { background: #004182; }
-
 /* =========================================================
    READING LAYOUTS (About / Now)
    ========================================================= */
