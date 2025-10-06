@@ -1,116 +1,191 @@
 /* =========================================================
    THEME TOKENS
    ========================================================= */
-:root{
-  --bg:#f2ede4;
-  --ink:#222;
-  --muted:#444;
-  --rule:#ddd;
+:root {
+  --bg: #f2ede4;
+  --ink: #222;
+  --muted: #444;
+  --rule: #ddd;
 
-  --accent:#5f6880;        /* slate: banner/button */
-  --accent-ink:#ffffff;
+  --accent: #5f6880;        /* slate: banner/button */
+  --accent-ink: #ffffff;
 }
-body.dark{
-  --bg:#1e1e1e;
-  --ink:#f2ede4;
-  --muted:#cfcfcf;
-  --rule:#333;
 
-  --accent:#9aa3bf;
-  --accent-ink:#0f1115;
+body.dark {
+  --bg: #1e1e1e;
+  --ink: #f2ede4;
+  --muted: #cfcfcf;
+  --rule: #333;
+
+  --accent: #9aa3bf;
+  --accent-ink: #0f1115;
 }
 
 /* =========================================================
    BASE
    ========================================================= */
-*{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; }
+* {
+  box-sizing: border-box;
+}
 
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:"Helvetica Neue", Arial, sans-serif;
-  line-height:1.6;
-  text-align:center;
-  transition:background-color .3s ease, color .3s ease;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  transition: background-color .3s ease, color .3s ease;
 }
 
 /* Shared page layout */
 main {
-  max-width: 1000px; /* wider global layout */
+  flex: 1;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem 3.5rem;
 }
 
 /* =========================================================
-   NAV
+   NAVIGATION
    ========================================================= */
-nav{
-  background:var(--bg);
-  border-bottom:1px solid var(--rule);
-  padding:1rem 1rem;
-  position:sticky; top:0; z-index:10;
-  display:flex; justify-content:center;
+nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
 }
-.nav-inner{
-  width:100%; max-width:900px; position:relative;
-  display:flex; justify-content:center; align-items:center; gap:1rem;
+
+.nav-inner {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
-nav a{
-  color:var(--ink); text-decoration:none; font-weight:bold; margin:0 .5rem;
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 .5rem;
 }
-nav a:hover{ text-decoration:underline; }
-nav a.active{ text-decoration:underline; text-underline-offset:4px; }
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 
 /* Theme toggle */
-#theme-toggle{
-  position:absolute; right:0;
-  cursor:pointer; background:none; border:none;
-  font-size:1.2rem; line-height:1; padding:.25rem .4rem; color:var(--ink);
-  transition:transform .2s ease;
+#theme-toggle {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: .25rem .4rem;
+  color: var(--ink);
+  transition: transform .2s ease;
 }
-#theme-toggle:hover{ transform:scale(1.15); }
+
+#theme-toggle:hover {
+  transform: scale(1.15);
+}
 
 /* =========================================================
    TYPOGRAPHY
    ========================================================= */
-/* Uniform section titles (About, Now) */
-h1{
-  font-family:"Playfair Display", serif;  /* loaded in HTML */
-  font-weight:600; color:var(--ink);
-  font-size:clamp(2rem, 4.5vw, 2.6rem);
-  line-height:1.2;
-  /* even, predictable space around the title on every page */
-  margin:0.75rem 0 0.9rem;
-  text-align:center;
+
+/* Section titles (About, Now, etc.) */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: clamp(2rem, 4.5vw, 2.6rem);
+  line-height: 1.2;
+  margin: 0.75rem 0 0.9rem;
+  text-align: center;
 }
 
-/* Body copy */
-p, li{ color:var(--muted); margin:.5rem auto; }
+/* Body text */
+p, li {
+  color: var(--muted);
+  margin: .5rem auto;
+}
 
-/* Lists reset */
-ul{ list-style:none; padding:0; margin:0 auto; }
+/* List reset */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
 
 /* =========================================================
    HOMEPAGE HERO
    ========================================================= */
-.hero-title{
-  /* bigger headline on the home hero + flourish */
-  font-size:clamp(2.5rem, 6vw, 3.2rem);
-  display:inline-block; position:relative; padding-bottom:.15em;
-}
-.hero-title::after{
-  content:""; position:absolute; left:50%; transform:translateX(-50%);
-  bottom:-.05em; width:80%; height:.18em; border-radius:999px;
-  background:linear-gradient(90deg,transparent 0,var(--accent) 20%,var(--accent) 80%,transparent 100%);
-  opacity:.6;
+.hero-title {
+  font-family: "Dancing Script", "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: clamp(2.6rem, 6vw, 3.3rem);
+  display: inline-block;
+  position: relative;
+  padding-bottom: .15em;
 }
 
-/* Role chips (home) */
-.chips{ display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin:.5rem 0 1.25rem; }
-.chip{
-  font-size:.95em; padding:.35rem .6rem;
-  border:1px solid var(--rule); border-radius:999px; color:var(--muted);
+.hero-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.05em;
+  width: 70%;
+  height: 0.08em;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent 0,
+    var(--accent) 20%,
+    var(--accent) 80%,
+    transparent 100%
+  );
+  opacity: .5;
+}
+
+/* Role chips */
+.chips {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: .5rem 0 1.25rem;
+}
+
+.chip {
+  font-size: .95em;
+  padding: .35rem .6rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--muted);
 }
 
 /* =========================================================
@@ -121,87 +196,96 @@ ul{ list-style:none; padding:0; margin:0 auto; }
   align-items: center;
   justify-content: center;
   gap: .35rem;
-
-  /* thinner + sleeker */
   padding: .45rem .8rem;
   border-radius: .5rem;
-
-  /* outline look */
   background: transparent;
   color: var(--accent);
   border: 1.5px solid var(--accent);
-
   text-decoration: none;
   font-weight: 700;
   transition: transform .15s ease, background-color .15s ease, color .15s ease, filter .15s ease;
 }
 
-/* hover: a very light tint, keep the outline vibe */
 .button:hover, .btn:hover, .linkedin-btn:hover {
-  background: rgba(95, 104, 128, 0.08); /* slate @ 8% */
+  background: rgba(95, 104, 128, 0.08);
   transform: translateY(-1px);
 }
 
-/* dark mode hover tint slightly stronger for contrast */
 body.dark .button:hover,
 body.dark .btn:hover,
 body.dark .linkedin-btn:hover {
-  background: rgba(154, 163, 191, 0.18); /* light-slate @ 18% */
+  background: rgba(154, 163, 191, 0.18);
 }
 
-/* arrow animation still works */
-.btn .arrow { transition: transform .15s ease; }
-.btn:hover .arrow { transform: translateX(4px); }
+.btn .arrow {
+  transition: transform .15s ease;
+}
+
+.btn:hover .arrow {
+  transform: translateX(4px);
+}
 
 /* =========================================================
    READING LAYOUTS (About / Now)
    ========================================================= */
-/* Slightly wider reading container so paragraphs feel less stacked */
 .container {
-  max-width: 1050px; /* gives reading pages extra breathing room */
+  max-width: 1050px;
   margin: 0 auto;
   padding: 2rem 1.5rem 3.5rem;
 }
 
-/* Left-aligned blocks for Now page (use class="prose" on the wrapper) */
-.prose{ text-align:left; margin-top:1rem; }
-.prose h2{
-  color:var(--ink);
-  font-size:1.45rem;
-  margin:2rem 0 .75rem;
-}
-/* Wider/airier prose text */
-.prose p,
-.prose li{
-  color:var(--muted);
-  font-size:1.05rem;
-  line-height:1.75;
-  margin:.5rem 0;
-  max-width:100ch;           /* was 85ch */
+/* Left-aligned blocks (Now page) */
+.prose {
+  text-align: left;
+  margin-top: 1rem;
 }
 
-/* About page centered long-form paragraphs */
-.about-page p{
-  margin:1.4em 0;
-  line-height:1.75;
-  max-width:105ch;           /* widened a touch */
-  margin-left:auto; margin-right:auto;
-  font-size:1.05em;
+.prose h2 {
+  color: var(--ink);
+  font-size: 1.45rem;
+  margin: 2rem 0 .75rem;
 }
 
-/* Optional meta line (e.g., “Last updated …”) */
-.page-meta{
-  margin-top:2.25rem; padding-top:.75rem;
-  border-top:1px solid var(--rule);
-  color:#777; font-size:.95rem; text-align:right;
+.prose p, .prose li {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: .5rem 0;
+  max-width: 100ch;
+}
+
+/* About page long-form text */
+.about-page p {
+  margin: 1.4em 0;
+  line-height: 1.75;
+  max-width: 105ch;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.05em;
+}
+
+/* Page meta (Last updated line) */
+.page-meta {
+  margin-top: 2.25rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--rule);
+  color: #777;
+  font-size: .95rem;
+  text-align: right;
 }
 
 /* =========================================================
    FOOTER
    ========================================================= */
-footer{
-  margin-top:3rem;
-  color:#888; font-size:.9rem;
-  padding-bottom:2rem;
+footer {
+  margin-top: auto;
+  color: #888;
+  font-size: .9rem;
+  padding: 1.5rem 0 1.5rem;
+  border-top: 1px solid var(--rule);
 }
-footer a{ color:inherit; text-decoration:underline; }
+
+footer a {
+  color: inherit;
+  text-decoration: underline;
+}
