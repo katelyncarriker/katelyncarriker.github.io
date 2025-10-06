@@ -114,22 +114,49 @@ ul{ list-style:none; padding:0; margin:0 auto; }
 }
 
 /* =========================================================
-   BUTTONS
+   BUTTONS (ghost / outline style)
    ========================================================= */
-.button,.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:.4rem;
-  padding:.6rem 1rem; border-radius:.6rem;
-  background:var(--accent); color:var(--accent-ink);
-  text-decoration:none; font-weight:700;
-  transition:transform .15s ease, filter .15s ease;
-}
-.button:hover,.btn:hover{ transform:translateY(-2px); filter:brightness(1.05); }
-.btn .arrow{ transition:transform .15s ease; }
-.btn:hover .arrow{ transform:translateX(4px); }
+.button, .btn, .linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
 
-/* Keep LinkedIn button on brand (no bright blue) */
-.linkedin-btn{ background:var(--accent); color:var(--accent-ink); }
-.linkedin-btn:hover{ filter:brightness(1.05); transform:translateY(-2px); }
+  /* thinner + sleeker */
+  padding: .45rem .8rem;
+  border-radius: .5rem;
+
+  /* outline look */
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .15s ease, background-color .15s ease, color .15s ease, filter .15s ease;
+}
+
+/* hover: a very light tint, keep the outline vibe */
+.button:hover, .btn:hover, .linkedin-btn:hover {
+  background: rgba(95, 104, 128, 0.08); /* slate @ 8% */
+  transform: translateY(-1px);
+}
+
+/* dark mode hover tint slightly stronger for contrast */
+body.dark .button:hover,
+body.dark .btn:hover,
+body.dark .linkedin-btn:hover {
+  background: rgba(154, 163, 191, 0.18); /* light-slate @ 18% */
+}
+
+/* arrow animation still works */
+.btn .arrow { transition: transform .15s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* old filled styles — delete these if present */
+.button, .btn { background: var(--accent); color: var(--accent-ink); }
+.linkedin-btn { background: #0a66c2; }         /* LinkedIn blue */
+.linkedin-btn:hover { background: #004182; }
 
 /* =========================================================
    READING LAYOUTS (About / Now)
@@ -155,14 +182,14 @@ ul{ list-style:none; padding:0; margin:0 auto; }
   font-size:1.05rem;
   line-height:1.75;
   margin:.5rem 0;
-  max-width:90ch;           /* was 85ch */
+  max-width:100ch;           /* was 85ch */
 }
 
 /* About page centered long-form paragraphs */
 .about-page p{
   margin:1.4em 0;
   line-height:1.75;
-  max-width:92ch;           /* widened a touch */
+  max-width:105ch;           /* widened a touch */
   margin-left:auto; margin-right:auto;
   font-size:1.05em;
 }
