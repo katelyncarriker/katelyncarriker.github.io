@@ -28,3 +28,17 @@
     if (here === '' && target === 'index.html') a.classList.add('active');
   });
 })();
+// Auto-set "Last updated" date on /now.html
+(() => {
+  const el = document.getElementById('last-updated');
+  if (!el) return;
+
+  // Try to use the file's actual last-modified timestamp
+  const d = new Date(document.lastModified);
+  const isValid = !isNaN(d.getTime());
+
+  const when = isValid ? d : new Date(); // fallback: today's date
+  const label = when.toLocaleString(undefined, { month: 'long', year: 'numeric' });
+
+  el.textContent = `Last updated: ${label}`;
+})();
