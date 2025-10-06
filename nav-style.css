@@ -36,11 +36,10 @@ body{
 }
 
 /* Shared page layout */
-main{
-  max-width:750px;
-  margin:0 auto;
-  /* a bit tighter top gap under the sticky nav */
-  padding:1.75rem 1rem 3.25rem;
+main {
+  max-width: 1000px; /* wider global layout */
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3.5rem;
 }
 
 /* =========================================================
@@ -136,10 +135,10 @@ ul{ list-style:none; padding:0; margin:0 auto; }
    READING LAYOUTS (About / Now)
    ========================================================= */
 /* Slightly wider reading container so paragraphs feel less stacked */
-.container{
-  max-width:900px;          /* was 820px */
-  margin:0 auto;
-  padding:1.75rem 1rem 3.25rem;
+.container {
+  max-width: 1050px; /* gives reading pages extra breathing room */
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3.5rem;
 }
 
 /* Left-aligned blocks for Now page (use class="prose" on the wrapper) */
