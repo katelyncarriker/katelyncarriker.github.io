@@ -1,10 +1,3 @@
-@font-face {
-  font-family: "Pantheon Signature";
-  src: url("fonts/PantheonSignature.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* ===== Theme variables ===== */
 :root { --bg:#f2ede4; --ink:#222; --muted:#444; --rule:#ddd; }
 body.dark { --bg:#1e1e1e; --ink:#f2ede4; --muted:#cfcfcf; --rule:#333; }
@@ -101,13 +94,13 @@ body.dark {
 
 /* Hero title (Doing IT Right) */
 .hero-title {
-  font-family: "Pantheon Signature", cursive;
+  .hero-title { font-family: "Playfair Display", serif; }
   font-size: clamp(2.8rem, 6vw, 3.5rem);
-  font-weight: normal;
-  letter-spacing: 0.03em;
+  font-weight: 700;
   display: inline-block;
   position: relative;
   padding-bottom: .15em;
+  letter-spacing: 0.02em;
   color: var(--ink);
 }
 
