@@ -105,8 +105,8 @@ h1 {
   color: var(--ink);
   font-size: clamp(1.8rem, 4vw, 2.5rem); /* smaller, more elegant */
   line-height: 1.2;
-   margin-top: 1.5rem;  /* reduced top padding */
-  margin: 1.25rem 0 .8rem;  /* tighter top/bottom rhythm */
+   margin-top: 1.25rem;  /* tightenged top padding */
+  margin-bottom: 1.25rem;  /* tightenged bottom padding */
   text-align: center;
 }
 
