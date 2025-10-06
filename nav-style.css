@@ -28,12 +28,16 @@ body.dark {
   box-sizing: border-box;
 }
 
+/* Make the page fill the viewport and reserve a row for the footer */
+html, body { height: 100%; }
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+   min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* nav | main grows | footer */
 }
 
 body {
